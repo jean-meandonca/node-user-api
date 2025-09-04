@@ -8,11 +8,11 @@ const users = []
 app.post('/usuarios', (req, res) => {
     users.push(req.body)
 
-    res.send('ok post, foi')
+    res.status(201).json(req.body) 
 })
 
 app.get('/usuarios', (req, res) => {
-    res.json(users)
+    res.status(200).json(users)
 })
 
-app.listen(3333);
+app.listen(3333); 
